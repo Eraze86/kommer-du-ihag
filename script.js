@@ -1,29 +1,39 @@
 //hämta element
-const add = document.getElementById("spara")
+const spara = document.getElementById("spara")
+list.innerText = localStorage.getItem("username")
 
 //skapa click funktion button
-
-add.addEventListener("click", (event) => {
+spara.addEventListener("click", (event) => {
     event.preventDefault();
     //lägg till text i lista
     let input = document.getElementById("input").value;
     let list = document.getElementById("list");
     let radera = document.createElement("button")
-    radera.textContent = "radera";
+
     list.innerText = input
+    radera.textContent = "radera";
     list.append(radera)
+ 
+
     localStorage.setItem("username", input)
-    //hämta värdet från localstorage
-    localStorage.getitem("username")
+
 
     //raderar knapp
+    function hejsan(){
     radera.addEventListener("click", (event) => {
         event.preventDefault();
         list.innerText = "";
-
-        localStorage.removeItem("username", input)
+        localStorage.removeItem("username")
+        
     })
+
+}
+    hejsan()
 });
+
+
+
+
 
 
 
